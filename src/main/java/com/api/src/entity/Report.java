@@ -28,13 +28,13 @@ public class Report extends AbstractEntity {
 	
 	public Report() {}
 	
-	public Report(Long id, Integer bloodPressure, Integer glucose, Integer bPM, String description, LocalDateTime date,
+	public Report(Long id, Integer bloodPressure, Integer glucose, Integer BPM, String description, LocalDateTime date,
 			Doctor doctor, Patient patient) {
 		super();
 		this.id = id;
 		this.bloodPressure = bloodPressure;
 		this.glucose = glucose;
-		this.BPM = bPM;
+		this.BPM = BPM;
 		this.Description = description;
 		this.date = date;
 		this.doctor = doctor;
@@ -69,8 +69,8 @@ public class Report extends AbstractEntity {
 		return BPM;
 	}
 
-	public void setBPM(Integer bPM) {
-		BPM = bPM;
+	public void setBPM(Integer BPM) {
+		this.BPM = BPM;
 	}
 
 	public String getDescription() {
