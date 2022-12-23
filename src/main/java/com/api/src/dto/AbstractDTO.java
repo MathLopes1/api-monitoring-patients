@@ -1,23 +1,20 @@
-package com.api.src.entity;
-
-import java.time.LocalDateTime;
-
-import javax.persistence.MappedSuperclass;
+package com.api.src.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-@MappedSuperclass
-public class AbstractEntity {
-	
+import java.time.LocalDateTime;
+
+public class AbstractDTO {
+
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	LocalDateTime createdAt;
-	
+
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	LocalDateTime updatedAt;
-	
-	public AbstractEntity() {}
-	
-	public AbstractEntity(LocalDateTime createdAt, LocalDateTime updatedAt) {
+
+	public AbstractDTO() {}
+
+	public AbstractDTO(LocalDateTime createdAt, LocalDateTime updatedAt) {
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
