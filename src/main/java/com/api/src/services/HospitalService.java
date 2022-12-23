@@ -16,6 +16,7 @@ public class HospitalService implements IHospitalService {
         this.hospitalRepository = hospitalRepository;
     }
 
+    @Override
     public Hospital create(Hospital hospital) {
         hospital.setCreatedAt(LocalDateTime.now());
         hospital.setUpdatedAt(LocalDateTime.now());
@@ -24,18 +25,22 @@ public class HospitalService implements IHospitalService {
         return hospital;
     }
 
+    @Override
     public Hospital UpdateById(String id, Hospital hospital) {
         return null;
     }
 
+    @Override
     public Hospital getById(String id) {
         return null;
     }
 
+    @Override
     public Hospital getAll() {
         return null;
     }
 
+    @Override
     public void deleteById(String id) {
 
     }
