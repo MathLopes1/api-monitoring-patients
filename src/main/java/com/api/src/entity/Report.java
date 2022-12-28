@@ -1,11 +1,18 @@
 package com.api.src.entity;
 
+import lombok.*;
+
 import java.time.LocalDateTime;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "tb_report")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Report extends AbstractEntity {
 	
 	@Id
@@ -25,84 +32,4 @@ public class Report extends AbstractEntity {
 	@ManyToOne
 	@JoinColumn(name="patient_id")
 	private Patient patient;
-	
-	public Report() {}
-	
-	public Report(Long id, Integer bloodPressure, Integer glucose, Integer BPM, String description, LocalDateTime date,
-			Doctor doctor, Patient patient) {
-		super();
-		this.id = id;
-		this.bloodPressure = bloodPressure;
-		this.glucose = glucose;
-		this.BPM = BPM;
-		this.Description = description;
-		this.date = date;
-		this.doctor = doctor;
-		this.patient = patient;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Integer getBloodPressure() {
-		return bloodPressure;
-	}
-
-	public void setBloodPressure(Integer bloodPressure) {
-		this.bloodPressure = bloodPressure;
-	}
-
-	public Integer getGlucose() {
-		return glucose;
-	}
-
-	public void setGlucose(Integer glucose) {
-		this.glucose = glucose;
-	}
-
-	public Integer getBPM() {
-		return BPM;
-	}
-
-	public void setBPM(Integer BPM) {
-		this.BPM = BPM;
-	}
-
-	public String getDescription() {
-		return Description;
-	}
-
-	public void setDescription(String description) {
-		Description = description;
-	}
-
-	public LocalDateTime getDate() {
-		return date;
-	}
-
-	public void setDate(LocalDateTime date) {
-		this.date = date;
-	}
-
-	public Doctor getDoctor() {
-		return doctor;
-	}
-
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
-	}
-
-	public Patient getPatient() {
-		return patient;
-	}
-
-	public void setPatient(Patient patient) {
-		this.patient = patient;
-	}
-	
 }
