@@ -1,4 +1,4 @@
-package com.api.src.entity;
+package com.api.src.domain;
 
 import java.time.LocalDateTime;
 

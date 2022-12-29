@@ -1,8 +1,9 @@
-package com.api.src.dto;
+package com.api.src.dto.Doctor;
 
-import com.api.src.entity.Hospital;
-import com.api.src.entity.Patient;
-import com.api.src.entity.Report;
+import com.api.src.domain.Hospital;
+import com.api.src.domain.Patient;
+import com.api.src.domain.Report;
+import com.api.src.dto.PeopleDTO;
 import lombok.*;
 
 import java.util.List;

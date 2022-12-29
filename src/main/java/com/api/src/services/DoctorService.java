@@ -1,6 +1,6 @@
 package com.api.src.services;
 
-import com.api.src.entity.Doctor;
+import com.api.src.domain.Doctor;
 import com.api.src.repositories.DoctorRepository;
 import com.api.src.services.interfaces.IDoctorService;
 import org.springframework.stereotype.Service;
