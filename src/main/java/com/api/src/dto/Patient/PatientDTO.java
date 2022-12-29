@@ -1,11 +1,11 @@
-package com.api.src.dto;
+package com.api.src.dto.Patient;
 
-import com.api.src.entity.Doctor;
-import com.api.src.entity.Hospital;
-import com.api.src.entity.Report;
+import com.api.src.domain.Doctor;
+import com.api.src.domain.Hospital;
+import com.api.src.domain.Report;
+import com.api.src.dto.AbstractDTO;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter

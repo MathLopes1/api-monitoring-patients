@@ -1,11 +1,13 @@
 package com.api.src.services;
 
-import com.api.src.entity.Hospital;
+import com.api.src.domain.Hospital;
+import com.api.src.domain.Patient;
 import com.api.src.repositories.HospitalRepository;
 import com.api.src.services.interfaces.IHospitalService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class HospitalService implements IHospitalService {
@@ -36,8 +38,9 @@ public class HospitalService implements IHospitalService {
     }
 
     @Override
-    public Hospital getAll() {
-        return null;
+    public List<Hospital> getAll() {
+        List<Hospital> Hospitals = this.hospitalRepository.findAll();
+        return Hospitals;
     }
 
     @Override

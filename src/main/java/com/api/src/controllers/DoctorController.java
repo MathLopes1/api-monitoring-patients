@@ -1,7 +1,7 @@
 package com.api.src.controllers;
 
-import com.api.src.dto.DoctorDTO;
-import com.api.src.entity.Doctor;
+import com.api.src.dto.Doctor.DoctorDTO;
+import com.api.src.domain.Doctor;
 import com.api.src.services.DoctorService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;

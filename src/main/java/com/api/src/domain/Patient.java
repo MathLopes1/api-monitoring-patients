@@ -1,8 +1,7 @@
-package com.api.src.entity;
+package com.api.src.domain;
 
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -16,27 +15,27 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_doctor")
+@Table(name = "tb_patient")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Doctor extends People {
+public class Patient extends People{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Long id;
 
-	private String crm;
+	@ManyToOne
+	@JoinColumn(name="doctor_id")
+	private Doctor doctor;
+
 	@ManyToOne
 	@JoinColumn(name="hospital_id")
 	private Hospital hospital;
 
-	@OneToMany(mappedBy = "doctor")
-	private List<Patient> patients;
-
-	@OneToMany(mappedBy = "doctor")
-    private List<Report> reports;
+	@OneToMany(mappedBy = "patient")
+	private List<Report> reports;
 }

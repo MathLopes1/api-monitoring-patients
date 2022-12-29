@@ -1,6 +1,6 @@
 package com.api.src.services.interfaces;
 
-import com.api.src.entity.Patient;
+import com.api.src.domain.Patient;
 
 public interface IPatientService {
     public Patient create (Patient patient);

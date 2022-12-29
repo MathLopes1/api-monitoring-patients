@@ -1,8 +1,8 @@
-package com.api.src.entity;
+package com.api.src.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -10,33 +10,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_patient")
+@Table(name = "tb_hospital")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Patient extends People{
+public class Hospital extends AbstractEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Long id;
+	
+	private String name;
+	
+	private String state;
+	
+	private String city;
+	
+	private String address;
 
-	@ManyToOne
-	@JoinColumn(name="doctor_id")
-	private Doctor doctor;
+	@OneToMany(mappedBy = "hospital")
+	@JsonIgnore
+	private List<Doctor> doctors;
 
-	@ManyToOne
-	@JoinColumn(name="hospital_id")
-	private Hospital hospital;
-
-	@OneToMany(mappedBy = "patient")
-	private List<Report> reports;
+	@OneToMany(mappedBy = "hospital")
+	@JsonIgnore
+	private List<Patient> patients;
 }
